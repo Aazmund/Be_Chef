@@ -12,6 +12,7 @@ private:
     QString name;
     ingredient *ingredients;
     int weight;
+    int *indeWeights;
 
 public:
     dish();
@@ -21,9 +22,6 @@ public:
 
     void setName(QString);
     QString getName();
-
-    int getWeight();
-    void setWeight(int);
 
 };
 

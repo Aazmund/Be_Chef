@@ -38,6 +38,8 @@ public:
 
     double getCarbohydrates();
     void setCarbohydrates(double);
+
+
 };
 
 #endif // INGREDIENT_H

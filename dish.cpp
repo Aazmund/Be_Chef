@@ -4,7 +4,7 @@ dish::dish(){
     id = 0;
     name = "";
     ingredients = new ingredient[1];
-    weight = 0;
+    indeWeights = new int[1];
 }
 
 void dish::setId(int id){
@@ -21,12 +21,4 @@ void dish::setName(QString name){
 
 QString dish::getName(){
     return this->name;
-}
-
-int dish::getWeight(){
-    return this->weight;
-}
-
-void dish::setWeight(int weight){
-   this->weight = weight;
 }
