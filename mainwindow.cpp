@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "QDebug"
 
+#include <QFile>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -71,16 +73,81 @@ void MainWindow::checkCheckBox(int *id_arr){
     if(ui->checkBox_17->checkState() == Qt::Checked){
         id_arr[16] = 17;
     }
+}
 
+void MainWindow::creatIngredientVector(){
+    QFile file("/Users/alex_su/QTprj/Be_Chef/ingredient.txt");
+    file.open(QIODevice::ReadOnly);
+
+    while(!file.atEnd()){
+
+        int buf_id = 0;
+        QString buf_name = "";
+        double buf_ccal = 0;
+        double buf_protein = 0;
+        double buf_fats = 0;
+        double buf_carbohydrates = 0;
+
+        QString result = "";
+        QString str = file.readLine();
+        int index = str.indexOf(";");
+        for(int i = 0; i < index; i++){
+            result += str[i];
+        }
+        buf_id = result.toInt();
+        str.remove(0, index + 1);
+
+        result = "";
+        index = str.indexOf(";");
+        for(int i = 0; i < index; i++){
+            result += str[i];
+        }
+        buf_name = result;
+        str.remove(0, index + 1);
+
+        result = "";
+        index = str.indexOf(";");
+        for(int i = 0; i < index; i++){
+            result += str[i];
+        }
+        buf_ccal = result.toDouble();
+        str.remove(0, index + 1);
+
+        result = "";
+        index = str.indexOf(";");
+        for(int i = 0; i < index; i++){
+            result += str[i];
+        }
+        buf_protein = result.toDouble();
+        str.remove(0, index + 1);
+
+        result = "";
+        index = str.indexOf(";");
+        for(int i = 0; i < index; i++){
+            result += str[i];
+        }
+        buf_fats = result.toDouble();
+        str.remove(0, index + 1);
+
+        result = "";
+        index = str.indexOf(";");
+        for(int i = 0; i < index; i++){
+            result += str[i];
+        }
+        buf_carbohydrates = result.toDouble();
+        str.remove(0, index + 1);
+
+        ingredient new_ingredient(buf_id, buf_name, buf_ccal, buf_protein, buf_fats, buf_carbohydrates);
+        ingredients.append(new_ingredient);
+
+    }
+
+    file.close();
 }
 
 void MainWindow::on_pushButton_clicked()
 {
     int id_arr[18];
     checkCheckBox(id_arr);
-
-    for(int i = 0; i < 18; i++){
-        qDebug() << id_arr[i];
-    }
-
+    creatIngredientVector();
 }

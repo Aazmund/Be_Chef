@@ -6,10 +6,7 @@
 
 
 
-class ingredient: QObject
-{
-    Q_OBJECT;
-
+class ingredient{
 private:
     int id;
     QString name;
@@ -20,6 +17,7 @@ private:
 
 public:
     ingredient();
+    ingredient(int, QString, double, double, double, double);
 
     int getId();
     void setId(int);

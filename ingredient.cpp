@@ -9,6 +9,15 @@ ingredient::ingredient(){
     carbohydrates = 0;
 }
 
+ingredient::ingredient(int id, QString name, double ccal, double protein, double fats, double carbohydrates){
+    this->id = id;
+    this->name = name;
+    this->ccal = ccal;
+    this->protein = protein;
+    this->fats = fats;
+    this->carbohydrates = carbohydrates;
+}
+
 int ingredient::getId(){
         return this->id;
     }

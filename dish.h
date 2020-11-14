@@ -5,8 +5,7 @@
 #include "ingredient.h"
 
 
-class dish: QObject{
-    Q_OBJECT;
+class dish{
 private:
     int id;
     QString name;
