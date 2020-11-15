@@ -182,4 +182,9 @@ void MainWindow::on_pushButton_clicked(){
     checkCheckBox(id_arr);
     creatIngredientBD();
     creatDishBD();
+
+    for(int i = 0; i < dishes.length(); i++){
+        qDebug() << dishes[i].getName();
+        dishes[i].showIds();
+    }
 }
