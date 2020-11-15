@@ -76,7 +76,7 @@ void MainWindow::checkCheckBox(int *id_arr){
 }
 
 void MainWindow::creatIngredientBD(){
-    QFile file("/Users/alex_su/QTprj/Be_Chef/ingredient.txt");
+    QFile file(":/ingredient.txt");
     file.open(QIODevice::ReadOnly);
 
     while(!file.atEnd()){
@@ -146,7 +146,7 @@ void MainWindow::creatIngredientBD(){
 }
 
 void MainWindow::creatDishBD(){
-    QFile file("/Users/alex_su/QTprj/Be_Chef/dish.txt");
+    QFile file(":/dish.txt");
     file.open(QIODevice::ReadOnly);
 
     while(!file.atEnd()){
