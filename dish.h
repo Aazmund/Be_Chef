@@ -9,12 +9,12 @@ class dish{
 private:
     int id;
     QString name;
-    ingredient *ingredients;
-    int weight;
-    int *indeWeights;
+    QVector<ingredient> ingredients;
+    QVector<int>indeWeights;
 
 public:
     dish();
+    dish(int, QString, ingredient, int);
 
     void setId(int);
     int getId();
@@ -22,6 +22,12 @@ public:
     void setName(QString);
     QString getName();
 
+    void setIngredient(int);
+    void setIndeWeights(int);
+
+    void showIds();
+    void showWs();
+    void rmZero();
 };
 
 #endif // DISH_H

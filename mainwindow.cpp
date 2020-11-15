@@ -75,7 +75,7 @@ void MainWindow::checkCheckBox(int *id_arr){
     }
 }
 
-void MainWindow::creatIngredientVector(){
+void MainWindow::creatIngredientBD(){
     QFile file("/Users/alex_su/QTprj/Be_Chef/ingredient.txt");
     file.open(QIODevice::ReadOnly);
 
@@ -145,9 +145,45 @@ void MainWindow::creatIngredientVector(){
     file.close();
 }
 
-void MainWindow::on_pushButton_clicked()
-{
+void MainWindow::creatDishBD(){
+    QFile file("/Users/alex_su/QTprj/Be_Chef/dish.txt");
+    file.open(QIODevice::ReadOnly);
+
+    while(!file.atEnd()){
+        int counter = 1;
+        dish new_dish;
+        QString result = "";
+        int index = 0;
+        QString str = file.readLine();
+        str = str.trimmed();
+        new_dish.setName(str);
+        new_dish.setId(counter);
+        while(str != "@"){
+            str = file.readLine();
+            str = str.trimmed();
+            index = str.indexOf(";");
+            for(int i = 0; i < index; i++){
+                result += str[i];
+            }
+            new_dish.setIngredient(result.toInt());
+            str.remove(0, index + 1);
+            new_dish.setIndeWeights(str.toInt());
+            result = "";
+        }
+        new_dish.rmZero();
+        dishes.append(new_dish);
+        counter++;
+    }
+    file.close();
+}
+
+void MainWindow::on_pushButton_clicked(){
     int id_arr[18];
     checkCheckBox(id_arr);
-    creatIngredientVector();
+    creatIngredientBD();
+    creatDishBD();
+    for(int i = 0; i < dishes.length(); i++){
+        qDebug() << dishes[i].getName();
+        dishes[i].showWs();
+    }
 }
