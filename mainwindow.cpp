@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    creatIngredientBD();
+    creatDishBD();
 }
 
 MainWindow::~MainWindow()
@@ -38,13 +40,13 @@ void MainWindow::checkCheckBox(int *id_arr){
         id_arr[4] = 5;
     }
     if(ui->checkBox_6->checkState() == Qt::Checked){
-        id_arr[5] = 8;
+        id_arr[5] = 6;
     }
     if(ui->checkBox_7->checkState() == Qt::Checked){
-        id_arr[6] = 6;
+        id_arr[6] = 7;
     }
     if(ui->checkBox_8->checkState() == Qt::Checked){
-        id_arr[7] = 7;
+        id_arr[7] = 8;
     }
     if(ui->checkBox_9->checkState() == Qt::Checked){
         id_arr[8] = 9;
@@ -177,14 +179,44 @@ void MainWindow::creatDishBD(){
     file.close();
 }
 
+void MainWindow::searchDish(int *arr){
+
+    for(int i = 0; i < dishes.length(); i++){
+        Sample sample;
+        sample.setName(dishes[i].getName());
+        sample.setAll_ind(dishes[i].getIngredientsLen());
+        results.append(sample);
+    }
+
+    for(int i = 0; i < 18; i++){
+        if(arr[i] != 0){
+            for (int index = 0; index < dishes.length(); index++) {
+                if(dishes[index].searchIngredientById(arr[i])){
+
+                    for(int ii = 0; ii < results.length(); ii++){
+                        if(results[ii].getName() == dishes[index].getName()){
+                            results[ii].addCollision(1);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    for(int i = 0; i < results.length(); i++){
+        results[i].calcPercent();
+        results[i].showStat();
+    }
+}
+
 void MainWindow::on_pushButton_clicked(){
     int id_arr[18];
     checkCheckBox(id_arr);
-    creatIngredientBD();
-    creatDishBD();
 
-    for(int i = 0; i < dishes.length(); i++){
-        qDebug() << dishes[i].getName();
-        dishes[i].showIds();
-    }
+//    for(int i = 0; i < dishes.length(); i++){
+//        qDebug() << dishes[i].getName();
+//        dishes[i].showIds();
+//    }
+
+    searchDish(id_arr);
 }

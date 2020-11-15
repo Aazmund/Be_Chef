@@ -39,6 +39,16 @@ void dish::setIndeWeights(int weight){
     this->indeWeights.append(weight);
 }
 
+bool dish::searchIngredientById(int id){
+    for(int i = 0; i < ingredients.length(); i++){
+        if(ingredients[i].getId() == id){
+            return true;
+            break;
+        }
+    }
+    return false;
+}
+
 void dish::showIds(){
     for(int i = 0; i < ingredients.length(); i++){
         qDebug() << ingredients[i].getId();
@@ -54,4 +64,8 @@ void dish::showWs(){
 void dish::rmZero(){
     ingredients.remove(ingredients.length() - 1);
     indeWeights.remove(indeWeights.length() - 1);
+}
+
+int dish::getIngredientsLen(){
+    return ingredients.length();
 }

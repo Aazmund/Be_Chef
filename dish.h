@@ -25,6 +25,10 @@ public:
     void setIngredient(int);
     void setIndeWeights(int);
 
+    int getIngredientsLen();
+
+    bool searchIngredientById(int);
+
     void showIds();
     void showWs();
     void rmZero();

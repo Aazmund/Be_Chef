@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "ingredient.h"
 #include "dish.h"
+#include "sample.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,19 +14,25 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+private:
+    Ui::MainWindow *ui;
+
 public:
     MainWindow(QWidget *parent = nullptr);
+
+    QVector<ingredient> ingredients;
+    QVector<dish> dishes;
+    QVector<Sample> results;
+
     void checkCheckBox(int *);
     void creatIngredientBD();
     void creatDishBD();
-    QVector<ingredient> ingredients;
-    QVector<dish> dishes;
+    void searchDish(int *);
+
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
 
-private:
-    Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

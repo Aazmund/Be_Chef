@@ -12,12 +12,14 @@ SOURCES += \
     dish.cpp \
     ingredient.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    sample.cpp
 
 HEADERS += \
     dish.h \
     ingredient.h \
-    mainwindow.h
+    mainwindow.h \
+    sample.h
 
 FORMS += \
     mainwindow.ui
