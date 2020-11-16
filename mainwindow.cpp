@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QDebug"
+#include "QPainter"
 
 #include <QFile>
 
@@ -40,6 +41,9 @@ void MainWindow::createCheckBox(){
   ui->checkBox_16->setText(ingredients[15].getName());
   ui->checkBox_17->setText(ingredients[16].getName());
 
+  ui->pic_1->setPixmap(QPixmap(":/images/borscht.jpg"));
+  ui->t1->setText(dishes[0].getName());
+  ui->properties_1->setText("Лёха где веса?");
 }
 
 void MainWindow::checkCheckBox(int *id_arr){
