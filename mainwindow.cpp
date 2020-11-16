@@ -11,11 +11,35 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     creatIngredientBD();
     creatDishBD();
+    createCheckBox();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::createCheckBox(){
+
+  ui->checkBox->setText(ingredients[0].getName());
+  ui->checkBox_2->setText(ingredients[1].getName());
+  ui->checkBox_3->setText(ingredients[2].getName());
+  ui->checkBox_4->setText(ingredients[3].getName());
+  ui->checkBox_5->setText(ingredients[4].getName());
+  ui->checkBox_6->setText(ingredients[5].getName());
+  ui->checkBox_7->setText(ingredients[6].getName());
+  ui->checkBox_8->setText(ingredients[7].getName());
+  ui->checkBox_9->setText(ingredients[8].getName());
+  ui->checkBox_10->setText(ingredients[9].getName());
+  ui->checkBox_11->setText(ingredients[10].getName());
+  ui->checkBox_12->setText(ingredients[11].getName());
+  ui->checkBox_13->setText(ingredients[12].getName());
+  ui->checkBox_14->setText(ingredients[13].getName());
+  ui->checkBox_15->setText(ingredients[14].getName());
+  ui->checkBox_16->setText(ingredients[15].getName());
+  ui->checkBox_17->setText(ingredients[16].getName());
+
 }
 
 void MainWindow::checkCheckBox(int *id_arr){
@@ -220,3 +244,4 @@ void MainWindow::on_pushButton_clicked(){
 
     searchDish(id_arr);
 }
+

@@ -6,35 +6,49 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>659</width>
+    <height>603</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Be Chef!</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>Выберите продукты</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Выберите продукты</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Вот что мы подобрали для Вас</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QScrollArea" name="scrollArea">
         <property name="widgetResizable">
          <bool>true</bool>
         </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents">
+        <widget class="QWidget" name="scrollAreaWidgetContents_1">
          <property name="geometry">
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>380</width>
+           <width>315</width>
            <height>465</height>
           </rect>
          </property>
@@ -42,119 +56,119 @@
           <item>
            <widget class="QCheckBox" name="checkBox">
             <property name="text">
-             <string>Картофель</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_2">
             <property name="text">
-             <string>Свекла</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_3">
             <property name="text">
-             <string>Морковь</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_4">
             <property name="text">
-             <string>Говядина</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_5">
             <property name="text">
-             <string>Лук</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_6">
             <property name="text">
-             <string>Капуста</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_7">
             <property name="text">
-             <string>Свинина</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_8">
             <property name="text">
-             <string>Помидоры</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_9">
             <property name="text">
-             <string>Сыр</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_10">
             <property name="text">
-             <string>Майонез</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_11">
             <property name="text">
-             <string>Кабачки</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_12">
             <property name="text">
-             <string>Болгарский перец</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_13">
             <property name="text">
-             <string>Чеснок</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_14">
             <property name="text">
-             <string>Докторская колбаса</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_15">
             <property name="text">
-             <string>Соленые огурцы</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_16">
             <property name="text">
-             <string>Зеленый горошек</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkBox_17">
             <property name="text">
-             <string>Яйца</string>
+             <string>CheckBox</string>
             </property>
            </widget>
           </item>
@@ -163,50 +177,41 @@
        </widget>
       </item>
       <item>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <widget class="QLabel" name="label_2">
-          <property name="text">
-           <string>Вот что мы подобрали для Вас</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
+       <widget class="QScrollArea" name="scrollArea_2">
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>314</width>
+           <height>465</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Подобрать рецепт</string>
-      </property>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Подобрать рецепт</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="PP">
+        <property name="text">
+         <string>Подбор только здорового питания</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
@@ -215,8 +220,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>22</height>
+     <width>659</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>

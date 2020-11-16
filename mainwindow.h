@@ -28,6 +28,7 @@ public:
     void creatIngredientBD();
     void creatDishBD();
     void searchDish(int *);
+    void createCheckBox();
 
     ~MainWindow();
 
