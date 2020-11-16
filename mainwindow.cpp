@@ -49,11 +49,11 @@ void MainWindow::setAll(){
   ui->t2->setText(dishes[1].getName());
   ui->properties_2->setText("Лёха где веса?");
 
-  ui->pic_3->setPixmap(QPixmap(":/images/Olivie.jpg"));
+  ui->pic_3->setPixmap(QPixmap(":/images/vegetable_stew.jpg"));
   ui->t3->setText(dishes[2].getName());
   ui->properties_3->setText("Лёха где веса?");
 
-  ui->pic_4->setPixmap(QPixmap(":/images/vegetable_stew.jpg"));
+  ui->pic_4->setPixmap(QPixmap(":/images/Olivie.jpg"));
   ui->t4->setText(dishes[3].getName());
   ui->properties_4->setText("Лёха где веса?");
 }
