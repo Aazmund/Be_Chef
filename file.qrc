@@ -2,5 +2,10 @@
 <qresource>
     <file>ingredient.txt</file>
     <file>dish.txt</file>
+    <file>recipes.txt</file>
+    <file>images/borscht.jpg</file>
+    <file>images/myaso-po-francuzski.jpg</file>
+    <file>images/Olivie.jpg</file>
+    <file>images/vegetable_stew.jpg</file>
 </qresource>
 </RCC>
