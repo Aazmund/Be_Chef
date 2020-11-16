@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     creatIngredientBD();
     creatDishBD();
-    createCheckBox();
+    setAll();
 }
 
 MainWindow::~MainWindow()
@@ -21,7 +21,7 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::createCheckBox(){
+void MainWindow::setAll(){
 
   ui->checkBox->setText(ingredients[0].getName());
   ui->checkBox_2->setText(ingredients[1].getName());
@@ -44,6 +44,18 @@ void MainWindow::createCheckBox(){
   ui->pic_1->setPixmap(QPixmap(":/images/borscht.jpg"));
   ui->t1->setText(dishes[0].getName());
   ui->properties_1->setText("Лёха где веса?");
+
+  ui->pic_2->setPixmap(QPixmap(":/images/myaso-po-francuzski.jpg"));
+  ui->t2->setText(dishes[1].getName());
+  ui->properties_2->setText("Лёха где веса?");
+
+  ui->pic_3->setPixmap(QPixmap(":/images/Olivie.jpg"));
+  ui->t3->setText(dishes[2].getName());
+  ui->properties_3->setText("Лёха где веса?");
+
+  ui->pic_4->setPixmap(QPixmap(":/images/vegetable_stew.jpg"));
+  ui->t4->setText(dishes[3].getName());
+  ui->properties_4->setText("Лёха где веса?");
 }
 
 void MainWindow::checkCheckBox(int *id_arr){
