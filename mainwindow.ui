@@ -48,8 +48,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>391</width>
-           <height>521</height>
+           <width>396</width>
+           <height>553</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -188,6 +188,8 @@
            <y>0</y>
            <width>390</width>
            <height>554</height>
+           <width>395</width>
+           <height>553</height>
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -225,6 +227,9 @@
               <widget class="QLabel" name="label_3">
                <property name="text">
                 <string>TextLabel</string>
+              <widget class="QCommandLinkButton" name="commandLinkButton">
+               <property name="text">
+                <string>Перейти к рецепту</string>
                </property>
               </widget>
              </item>
@@ -265,6 +270,9 @@
               <widget class="QLabel" name="label_4">
                <property name="text">
                 <string>TextLabel</string>
+              <widget class="QCommandLinkButton" name="commandLinkButton_2">
+               <property name="text">
+                <string>Перейти к рецепту</string>
                </property>
               </widget>
              </item>
@@ -305,6 +313,9 @@
               <widget class="QLabel" name="label_5">
                <property name="text">
                 <string>TextLabel</string>
+              <widget class="QCommandLinkButton" name="commandLinkButton_3">
+               <property name="text">
+                <string>Перейти к рецепту</string>
                </property>
               </widget>
              </item>
@@ -345,6 +356,9 @@
               <widget class="QLabel" name="label_6">
                <property name="text">
                 <string>TextLabel</string>
+              <widget class="QCommandLinkButton" name="commandLinkButton_4">
+               <property name="text">
+                <string>Перейти к рецепту</string>
                </property>
               </widget>
              </item>
@@ -386,7 +400,7 @@
      <x>0</x>
      <y>0</y>
      <width>821</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
