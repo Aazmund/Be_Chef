@@ -291,7 +291,7 @@ void MainWindow::on_pushButton_clicked(){
 //    }
 
     searchDish(id_arr);
-
+    wastedCheck();
 
     if(ui->PP->checkState() == Qt::Checked){
         for (int i = 0; i < results.length(); i++) {
@@ -300,6 +300,8 @@ void MainWindow::on_pushButton_clicked(){
             }
         }
     }
+
+
 //    window->setResults(results);
 
 }
@@ -328,3 +330,16 @@ void MainWindow::on_commandLinkButton_4_clicked(){
     window->show();
 }
 
+void MainWindow::wastedCheck(){
+    ui->frame->setEnabled(true);
+    ui->frame_2->setEnabled(true);
+    ui->frame_3->setEnabled(true);
+    ui->frame_4->setEnabled(true);
+    if(results[0].getPercent() < 65) ui->frame->setEnabled(false);
+    if(results[1].getPercent() < 65) ui->frame_2->setEnabled(false);
+    if(results[2].getPercent() < 65) ui->frame_3->setEnabled(false);
+    if(results[3].getPercent() < 65) ui->frame_4->setEnabled(false);
+
+
+
+}

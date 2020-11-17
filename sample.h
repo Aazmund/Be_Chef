@@ -18,7 +18,7 @@ public:
     void setName(QString);
     QString getName();
     void setPercent(float);
-    QString getPercent();
+    float getPercent();
     void addCollision(int);
     void setAll_ind(int);
     void showStat();

@@ -31,6 +31,9 @@ void Sample::showStat(){
     qDebug() << this->percent;
 }
 
+float Sample::getPercent(){
+    return this->percent;
+}
 void Sample::calcPercent(){
     this->percent = (this->collision / this->all_ind) * 100;
 }

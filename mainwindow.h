@@ -29,6 +29,7 @@ public:
     void creatDishBD();
     void searchDish(int *);
     void setAll();
+    void wastedCheck();
 
     ~MainWindow();
 
