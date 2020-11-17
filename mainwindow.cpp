@@ -283,6 +283,9 @@ void MainWindow::searchDish(int *arr){
 }
 
 void MainWindow::on_pushButton_clicked(){
+    for(int i = 0; i < results.length(); i++){
+        results[i].setPercent(0);
+    }
     int id_arr[18];
     checkCheckBox(id_arr);
 
@@ -293,6 +296,7 @@ void MainWindow::on_pushButton_clicked(){
 
     searchDish(id_arr);
     wastedCheck();
+
 
 //    if(ui->PP->checkState() == Qt::Checked){
 //        for (int i = 0; i < results.length(); i++) {
@@ -346,8 +350,4 @@ void MainWindow::wastedCheck(){
     if(results[1].getPercent() < 65) ui->frame_2->setEnabled(false);
     if(results[2].getPercent() < 65) ui->frame_3->setEnabled(false);
     if(results[3].getPercent() < 65) ui->frame_4->setEnabled(false);
-
-    for(int i = 0; i < results.length(); i++){
-        results[i].setPercent(0);
-    }
 }
