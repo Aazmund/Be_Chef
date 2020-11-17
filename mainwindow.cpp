@@ -296,6 +296,7 @@ void MainWindow::on_pushButton_clicked(){
 //    }
 
     searchDish(id_arr);
+<<<<<<< HEAD
 
     if(ui->PP->checkState() == Qt::Checked){
         for (int i = 0; i < results.length(); i++) {
@@ -307,6 +308,9 @@ void MainWindow::on_pushButton_clicked(){
 
     auto window = new window2;
     window->setResults(results);
+=======
+    auto window = new window2;
+>>>>>>> parent of 3e71b6d... beta v0.2.2
     window->show();
 }
 
