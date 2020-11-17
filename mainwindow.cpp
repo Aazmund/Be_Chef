@@ -286,9 +286,15 @@ void MainWindow::searchDish(int *arr){
 }
 
 void MainWindow::on_pushButton_clicked(){
+
     for(int i = 0; i < results.length(); i++){
         results[i].setPercent(0);
     }
+
+    for (int i = 0; i < results.length(); i++) {
+        results.remove(i);
+    }
+
     int id_arr[18];
     checkCheckBox(id_arr);
 
