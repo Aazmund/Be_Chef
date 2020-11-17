@@ -34,6 +34,11 @@ void Sample::showStat(){
 float Sample::getPercent(){
     return this->percent;
 }
+
+void Sample::setPercent(float percent){
+    this->percent = percent;
+}
+
 void Sample::calcPercent(){
     this->percent = (this->collision / this->all_ind) * 100;
 }

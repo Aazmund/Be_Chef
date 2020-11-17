@@ -340,6 +340,7 @@ void MainWindow::wastedCheck(){
     if(results[2].getPercent() < 65) ui->frame_3->setEnabled(false);
     if(results[3].getPercent() < 65) ui->frame_4->setEnabled(false);
 
-
-
+    for(int i = 0; i < results.length(); i++){
+        results[i].setPercent(0);
+    }
 }
