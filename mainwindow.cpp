@@ -253,6 +253,9 @@ void MainWindow::creatDishBD(){
 }
 
 void MainWindow::searchDish(int *arr){
+    for (int i = 0; i < results.length(); i++) {
+        results.remove(i);
+    }
 
     for(int i = 0; i < dishes.length(); i++){
         Sample sample;
