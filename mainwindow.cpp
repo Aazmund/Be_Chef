@@ -254,7 +254,8 @@ void MainWindow::creatDishBD(){
 
 void MainWindow::searchDish(int *arr){
     for (int i = 0; i < results.length(); i++) {
-        results.remove(i);
+        results.removeLast();
+        results.removeFirst();
     }
 
     for(int i = 0; i < dishes.length(); i++){
@@ -264,7 +265,7 @@ void MainWindow::searchDish(int *arr){
         results.append(sample);
     }
 
-    for(int i = 0; i < 18; i++){
+    for(int i = 0; i < 17; i++){
         if(arr[i] != 0){
             for (int index = 0; index < dishes.length(); index++) {
                 if(dishes[index].searchIngredientById(arr[i])){
@@ -291,32 +292,11 @@ void MainWindow::on_pushButton_clicked(){
         results[i].setPercent(0);
     }
 
-    for (int i = 0; i < results.length(); i++) {
-        results.remove(i);
-    }
-
     int id_arr[18];
     checkCheckBox(id_arr);
 
-//    for(int i = 0; i < dishes.length(); i++){
-//        qDebug() << dishes[i].getName();
-//        dishes[i].showIds();
-//    }
-
     searchDish(id_arr);
     wastedCheck();
-
-
-//    if(ui->PP->checkState() == Qt::Checked){
-//        for (int i = 0; i < results.length(); i++) {
-//            if(results[i].getName() == "Борщ" || results[i].getName() == "Мясо по-французки" || results[i].getName() == "Оливье"){
-//                results.remove(i);
-//            }
-//        }
-//    }
-
-
-//    window->setResults(results);
 
 }
 
@@ -359,4 +339,19 @@ void MainWindow::wastedCheck(){
     if(results[1].getPercent() < 65) ui->frame_2->setEnabled(false);
     if(results[2].getPercent() < 65) ui->frame_3->setEnabled(false);
     if(results[3].getPercent() < 65) ui->frame_4->setEnabled(false);
+
+    qDebug() << "kkkkkkkkkkkkk";
+    qDebug() << results[0].getName();
+    qDebug() << results[0].getPercent();
+    qDebug() << results[1].getName();
+    qDebug() << results[1].getPercent();
+    qDebug() << results[2].getName();
+    qDebug() << results[2].getPercent();
+    qDebug() << results[3].getName();
+    qDebug() << results[3].getPercent();
+    qDebug() << "kkkkkkkkkkkkk";
+    for(int i = 0; i < dishes.length(); i++){
+        qDebug() << dishes[i].getName();
+    }
+    qDebug() << "kkkkkkkkkkkkk";
 }
