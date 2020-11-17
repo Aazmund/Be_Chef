@@ -293,13 +293,13 @@ void MainWindow::on_pushButton_clicked(){
     searchDish(id_arr);
     wastedCheck();
 
-    if(ui->PP->checkState() == Qt::Checked){
-        for (int i = 0; i < results.length(); i++) {
-            if(results[i].getName() == "Борщ" || results[i].getName() == "Мясо по-французки" || results[i].getName() == "Оливье"){
-                results.remove(i);
-            }
-        }
-    }
+//    if(ui->PP->checkState() == Qt::Checked){
+//        for (int i = 0; i < results.length(); i++) {
+//            if(results[i].getName() == "Борщ" || results[i].getName() == "Мясо по-французки" || results[i].getName() == "Оливье"){
+//                results.remove(i);
+//            }
+//        }
+//    }
 
 
 //    window->setResults(results);
@@ -335,6 +335,12 @@ void MainWindow::wastedCheck(){
     ui->frame_2->setEnabled(true);
     ui->frame_3->setEnabled(true);
     ui->frame_4->setEnabled(true);
+    if(ui->PP->checkState() == Qt::Checked){
+        ui->frame->setEnabled(false);
+        ui->frame_2->setEnabled(false);
+        ui->frame_3->setEnabled(true);
+        ui->frame_4->setEnabled(false);
+    }
     if(results[0].getPercent() < 65) ui->frame->setEnabled(false);
     if(results[1].getPercent() < 65) ui->frame_2->setEnabled(false);
     if(results[2].getPercent() < 65) ui->frame_3->setEnabled(false);
