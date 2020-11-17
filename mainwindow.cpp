@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     creatIngredientBD();
     creatDishBD();
     setAll();
+    this->setWindowIcon(QIcon(":/images/logo.ico"));
 }
 
 MainWindow::~MainWindow()
