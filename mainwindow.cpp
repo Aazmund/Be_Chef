@@ -297,33 +297,16 @@ void MainWindow::on_pushButton_clicked(){
 
     searchDish(id_arr);
 
-}
+    if(ui->PP->checkState() == Qt::Checked){
+        for (int i = 0; i < results.length(); i++) {
+            if(results[i].getName() == "Борщ" || results[i].getName() == "Мясо по-французки" || results[i].getName() == "Оливье"){
+                results.remove(i);
+            }
+        }
+    }
 
-
-
-
-
-
-void MainWindow::on_commandLinkButton_clicked(){
     auto window = new window2;
-    window->broadcast(1, dishes);
+    window->setResults(results);
     window->show();
 }
 
-void MainWindow::on_commandLinkButton_2_clicked(){
-    auto window = new window2;
-    window->broadcast(2, dishes);
-    window->show();
-}
-
-void MainWindow::on_commandLinkButton_3_clicked(){
-    auto window = new window2;
-    window->broadcast(3, dishes);
-    window->show();
-}
-
-void MainWindow::on_commandLinkButton_4_clicked(){
-    auto window = new window2;
-    window->broadcast(4, dishes);
-    window->show();
-}

@@ -30,15 +30,10 @@ public:
     void searchDish(int *);
     void setAll();
 
-
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
 
-    void on_commandLinkButton_clicked();
-    void on_commandLinkButton_2_clicked();
-    void on_commandLinkButton_3_clicked();
-    void on_commandLinkButton_4_clicked();
 };
 #endif // MAINWINDOW_H
