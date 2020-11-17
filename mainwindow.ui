@@ -187,11 +187,7 @@
            <x>0</x>
            <y>0</y>
            <width>390</width>
-<<<<<<< HEAD
            <height>554</height>
-=======
-           <height>521</height>
->>>>>>> parent of 3e71b6d... beta v0.2.2
           </rect>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -225,7 +221,7 @@
                </property>
               </widget>
              </item>
-<<<<<<< HEAD
+
              <item>
               <widget class="QLabel" name="label_3">
                <property name="text">
@@ -233,8 +229,6 @@
                </property>
               </widget>
              </item>
-=======
->>>>>>> parent of 3e71b6d... beta v0.2.2
             </layout>
            </widget>
           </item>
@@ -268,7 +262,6 @@
                </property>
               </widget>
              </item>
-<<<<<<< HEAD
              <item>
               <widget class="QLabel" name="label_4">
                <property name="text">
@@ -276,8 +269,6 @@
                </property>
               </widget>
              </item>
-=======
->>>>>>> parent of 3e71b6d... beta v0.2.2
             </layout>
            </widget>
           </item>
@@ -311,7 +302,6 @@
                </property>
               </widget>
              </item>
-<<<<<<< HEAD
              <item>
               <widget class="QLabel" name="label_5">
                <property name="text">
@@ -319,8 +309,6 @@
                </property>
               </widget>
              </item>
-=======
->>>>>>> parent of 3e71b6d... beta v0.2.2
             </layout>
            </widget>
           </item>
@@ -354,7 +342,6 @@
                </property>
               </widget>
              </item>
-<<<<<<< HEAD
              <item>
               <widget class="QLabel" name="label_6">
                <property name="text">
@@ -362,8 +349,6 @@
                </property>
               </widget>
              </item>
-=======
->>>>>>> parent of 3e71b6d... beta v0.2.2
             </layout>
            </widget>
           </item>

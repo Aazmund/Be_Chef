@@ -5,10 +5,6 @@ dish::dish(){
     id = 0;
     name = "";
     ccal = 0;
-
-    protein = 0;
-    fats = 0;
-    carbohydrates = 0;
 }
 
 dish::dish(int id, QString name, ingredient obj, int indeWeights){
@@ -91,48 +87,4 @@ void dish::setIndeCcal(int ccal, int id){
             ingredients[i].setCcal(ccal);
         }
     }
-}
-
-
-void dish::setProtein(){
-    for(int i = 0; i < ingredients.length(); i++){
-        this->protein += ingredients[i].getProtein();
-        qDebug() << ingredients[i].getProtein();
-    }
-}
-
-void dish::setFats(){
-    for(int i = 0; i < ingredients.length(); i++){
-        this->fats += ingredients[i].getFats();
-    }
-}
-
-void dish::setCarbohydrates(){
-    for(int i = 0; i < ingredients.length(); i++){
-        this->carbohydrates += ingredients[i].getCarbohydrates();
-    }
-}
-
-void dish::setProtein(double protein){
-    this->protein += protein;
-}
-
-void dish::setFats(double fats){
-    this->fats += fats;
-}
-
-void dish::setCarbohydrates(double carbohydrates){
-    this->carbohydrates += carbohydrates;
-}
-
-double dish::getProtein(){
-    return protein;
-}
-
-double dish::getFats(){
-    return fats;
-}
-
-double dish::getCarbohydrates(){
-    return carbohydrates;
 }

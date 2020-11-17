@@ -17,8 +17,7 @@ window2::~window2()
 
 void window2::setResults(QVector<Sample> vector){
 
-<<<<<<< HEAD
-=======
+
     auto layout = new QVBoxLayout;
 
     for(int i = 0; i < vector.length(); i++){
@@ -26,5 +25,4 @@ void window2::setResults(QVector<Sample> vector){
 
 
     }
->>>>>>> parent of 3e71b6d... beta v0.2.2
 }

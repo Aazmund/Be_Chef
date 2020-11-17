@@ -43,36 +43,26 @@ void MainWindow::setAll(){
   ui->checkBox_17->setText(ingredients[16].getName());
 
 
-//  for(int i = 0; i < dishes.length(); i++){
-//      dishes[i].c_ccal();
-//      dishes[i].setCarbohydrates();
-//      dishes[i].setFats();
-//      dishes[i].setProtein();
-//      qDebug() << dishes[i].getCcal();
-//  }
+  for(int i = 0; i < dishes.length(); i++){
+      dishes[i].c_ccal();
+      qDebug() << dishes[i].getCcal();
+  }
 
   ui->pic_1->setPixmap(QPixmap(":/images/borscht.jpg"));
   ui->t1->setText(dishes[0].getName());
-  ui->properties_1->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[0].getCcal() / 10));
-  ui->label_3->setText("Белки: " + QString::number(dishes[0].getProtein()) + " " + "Жиры: " + QString::number(dishes[0].getFats()) + " " + "Углеводы: " + QString::number(dishes[0].getCarbohydrates()));
+  ui->properties_1->setText(QString::number(dishes[0].getCcal() / 10));
 
   ui->pic_2->setPixmap(QPixmap(":/images/myaso-po-francuzski.jpg"));
   ui->t2->setText(dishes[1].getName());
-  ui->properties_2->setText("Килокалорий в 100гр продукта " + QString::number(dishes[1].getCcal() / 10));
-  ui->label_4->setText("Белки: " + QString::number(dishes[1].getProtein()) + " " + "Жиры: " + QString::number(dishes[1].getFats()) + " " + "Углеводы: " + QString::number(dishes[1].getCarbohydrates()));
-
+  ui->properties_2->setText(QString::number(dishes[1].getCcal() / 10));
 
   ui->pic_3->setPixmap(QPixmap(":/images/vegetable_stew.jpg"));
   ui->t3->setText(dishes[2].getName());
-  ui->properties_3->setText("Килокалорий в 100гр продукта " + QString::number(dishes[2].getCcal() / 10));
-  ui->label_5->setText("Белки: " + QString::number(dishes[2].getProtein()) + " " + "Жиры: " + QString::number(dishes[2].getFats()) + " " + "Углеводы: " + QString::number(dishes[2].getCarbohydrates()));
-
+  ui->properties_3->setText(QString::number(dishes[2].getCcal() / 10));
 
   ui->pic_4->setPixmap(QPixmap(":/images/Olivie.jpg"));
   ui->t4->setText(dishes[3].getName());
-  ui->properties_4->setText("Килокалорий в 100гр продукта " + QString::number(dishes[3].getCcal() / 10));
-  ui->label_6->setText("Белки: " + QString::number(dishes[3].getProtein()) + " " + "Жиры: " + QString::number(dishes[3].getFats()) + " " + "Углеводы: " + QString::number(dishes[3].getCarbohydrates()));
-
+  ui->properties_4->setText(QString::number(dishes[3].getCcal() / 10));
 
   auto wrapper = new QVBoxLayout;
   ui->widget->setLayout(wrapper);
@@ -229,13 +219,6 @@ void MainWindow::creatDishBD(){
                 result += str[i];
             }
             new_dish.setIngredient(result.toInt());
-            for(int i = 0; i < ingredients.length(); i++){
-                if(ingredients[i].getId() == result.toInt()){
-                    new_dish.setProtein(ingredients[i].getProtein());
-                    new_dish.setFats(ingredients[i].getFats());
-                    new_dish.setCarbohydrates(ingredients[i].getCarbohydrates());
-                }
-            }
             str.remove(0, index + 1);
             new_dish.setIndeWeights(str.toInt());
 
@@ -252,7 +235,6 @@ void MainWindow::creatDishBD(){
         dishes.append(new_dish);
         counter++;
     }
-
     file.close();
 }
 
@@ -296,7 +278,7 @@ void MainWindow::on_pushButton_clicked(){
 //    }
 
     searchDish(id_arr);
-<<<<<<< HEAD
+
 
     if(ui->PP->checkState() == Qt::Checked){
         for (int i = 0; i < results.length(); i++) {
@@ -308,9 +290,9 @@ void MainWindow::on_pushButton_clicked(){
 
     auto window = new window2;
     window->setResults(results);
-=======
+
     auto window = new window2;
->>>>>>> parent of 3e71b6d... beta v0.2.2
+
     window->show();
 }
 
