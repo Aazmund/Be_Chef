@@ -300,10 +300,31 @@ void MainWindow::on_pushButton_clicked(){
             }
         }
     }
+//    window->setResults(results);
 
+}
+
+void MainWindow::on_commandLinkButton_clicked(){
     auto window = new window2;
-    window->setResults(results);
+    window->broadcast(1, dishes);
+    window->show();
+}
 
+void MainWindow::on_commandLinkButton_2_clicked(){
+    auto window = new window2;
+    window->broadcast(2, dishes);
+    window->show();
+}
+
+void MainWindow::on_commandLinkButton_3_clicked(){
+    auto window = new window2;
+    window->broadcast(3, dishes);
+    window->show();
+}
+
+void MainWindow::on_commandLinkButton_4_clicked(){
+    auto window = new window2;
+    window->broadcast(4, dishes);
     window->show();
 }
 
