@@ -4,6 +4,7 @@
 dish::dish(){
     id = 0;
     name = "";
+    ccal = 0;
 }
 
 dish::dish(int id, QString name, ingredient obj, int indeWeights){
@@ -68,4 +69,22 @@ void dish::rmZero(){
 
 int dish::getIngredientsLen(){
     return ingredients.length();
+}
+
+int dish::getCcal(){
+    return this->ccal;
+}
+
+void dish::c_ccal(){
+    for(int i = 0; i < ingredients.length(); i++){
+        this->ccal += (ingredients[i].getCcal() * indeWeights[i]);
+    }
+}
+
+void dish::setIndeCcal(int ccal, int id){
+    for(int i = 0; i < ingredients.length(); i++){
+        if(ingredients[i].getId() == id){
+            ingredients[i].setCcal(ccal);
+        }
+    }
 }

@@ -3,14 +3,15 @@
 
 #include <QObject>
 #include "ingredient.h"
-
+#include <QVector>
 
 class dish{
 private:
     int id;
     QString name;
-    QVector<ingredient> ingredients;
-    QVector<int>indeWeights;
+    QVector <ingredient> ingredients;
+    QVector <int>indeWeights;
+    int ccal;
 
 public:
     dish();
@@ -24,6 +25,7 @@ public:
 
     void setIngredient(int);
     void setIndeWeights(int);
+    void setIndeCcal(int, int);
 
     int getIngredientsLen();
 
@@ -32,6 +34,9 @@ public:
     void showIds();
     void showWs();
     void rmZero();
+
+    int getCcal();
+    void c_ccal();
 };
 
 #endif // DISH_H

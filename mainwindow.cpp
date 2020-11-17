@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "QDebug"
 #include "QPainter"
+#include "window2.h"
 
 #include <QFile>
 
@@ -41,21 +42,31 @@ void MainWindow::setAll(){
   ui->checkBox_16->setText(ingredients[15].getName());
   ui->checkBox_17->setText(ingredients[16].getName());
 
+
+  for(int i = 0; i < dishes.length(); i++){
+      dishes[i].c_ccal();
+      qDebug() << dishes[i].getCcal();
+  }
+
   ui->pic_1->setPixmap(QPixmap(":/images/borscht.jpg"));
   ui->t1->setText(dishes[0].getName());
-  ui->properties_1->setText("Лёха где веса?");
+  ui->properties_1->setText(QString::number(dishes[0].getCcal() / 10));
 
   ui->pic_2->setPixmap(QPixmap(":/images/myaso-po-francuzski.jpg"));
   ui->t2->setText(dishes[1].getName());
-  ui->properties_2->setText("Лёха где веса?");
+  ui->properties_2->setText(QString::number(dishes[1].getCcal() / 10));
 
   ui->pic_3->setPixmap(QPixmap(":/images/vegetable_stew.jpg"));
   ui->t3->setText(dishes[2].getName());
-  ui->properties_3->setText("Лёха где веса?");
+  ui->properties_3->setText(QString::number(dishes[2].getCcal() / 10));
 
   ui->pic_4->setPixmap(QPixmap(":/images/Olivie.jpg"));
   ui->t4->setText(dishes[3].getName());
-  ui->properties_4->setText("Лёха где веса?");
+  ui->properties_4->setText(QString::number(dishes[3].getCcal() / 10));
+
+  auto wrapper = new QVBoxLayout;
+  ui->widget->setLayout(wrapper);
+
 }
 
 void MainWindow::checkCheckBox(int *id_arr){
@@ -210,6 +221,14 @@ void MainWindow::creatDishBD(){
             new_dish.setIngredient(result.toInt());
             str.remove(0, index + 1);
             new_dish.setIndeWeights(str.toInt());
+
+            //поиск калории
+            for(int i = 0; i < ingredients.length(); i++){
+                if(ingredients[i].getId() == result.toInt()){
+                    new_dish.setIndeCcal(ingredients[i].getCcal(), result.toInt());
+                }
+            }
+
             result = "";
         }
         new_dish.rmZero();
@@ -259,5 +278,7 @@ void MainWindow::on_pushButton_clicked(){
 //    }
 
     searchDish(id_arr);
+    auto window = new window2;
+    window->show();
 }
 

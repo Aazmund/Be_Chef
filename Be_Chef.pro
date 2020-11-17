@@ -13,16 +13,19 @@ SOURCES += \
     ingredient.cpp \
     main.cpp \
     mainwindow.cpp \
-    sample.cpp
+    sample.cpp \
+    window2.cpp
 
 HEADERS += \
     dish.h \
     ingredient.h \
     mainwindow.h \
-    sample.h
+    sample.h \
+    window2.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    window2.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
