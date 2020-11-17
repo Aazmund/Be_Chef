@@ -17,8 +17,8 @@ public:
     explicit window2(QWidget *parent = nullptr);
     ~window2();
     void setResults(QVector<Sample>);
-
     void broadcast(int, QVector<dish>);
+    void showProg();
 
 private:
     Ui::window2 *ui;

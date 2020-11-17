@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
     creatDishBD();
     setAll();
     this->setWindowIcon(QIcon(":/images/logo.ico"));
+    showProg();
 }
 
 MainWindow::~MainWindow()
@@ -51,24 +52,24 @@ void MainWindow::setAll(){
 
   ui->pic_1->setPixmap(QPixmap(":/images/borscht.jpg"));
     ui->t1->setText(dishes[0].getName());
-    ui->properties_1->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[0].getCcal() / 10));
+    ui->properties_1->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[0].getCcal() / 10 / 3));
     ui->label_3->setText("Белки: " + QString::number(dishes[0].getProtein()) + " " + "Жиры: " + QString::number(dishes[0].getFats()) + " " + "Углеводы: " + QString::number(dishes[0].getCarbohydrates()));
 
     ui->pic_2->setPixmap(QPixmap(":/images/myaso-po-francuzski.jpg"));
     ui->t2->setText(dishes[1].getName());
-    ui->properties_2->setText("Килокалорий в 100гр продукта " + QString::number(dishes[1].getCcal() / 10));
+    ui->properties_2->setText("Килокалорий в 100гр продукта " + QString::number(dishes[1].getCcal() / 10 ));
     ui->label_4->setText("Белки: " + QString::number(dishes[1].getProtein()) + " " + "Жиры: " + QString::number(dishes[1].getFats()) + " " + "Углеводы: " + QString::number(dishes[1].getCarbohydrates()));
 
 
     ui->pic_3->setPixmap(QPixmap(":/images/vegetable_stew.jpg"));
     ui->t3->setText(dishes[2].getName());
-    ui->properties_3->setText("Килокалорий в 100гр продукта " + QString::number(dishes[2].getCcal() / 10));
+    ui->properties_3->setText("Килокалорий в 100гр продукта " + QString::number(dishes[2].getCcal() / 10 ));
     ui->label_5->setText("Белки: " + QString::number(dishes[2].getProtein()) + " " + "Жиры: " + QString::number(dishes[2].getFats()) + " " + "Углеводы: " + QString::number(dishes[2].getCarbohydrates()));
 
 
     ui->pic_4->setPixmap(QPixmap(":/images/Olivie.jpg"));
     ui->t4->setText(dishes[3].getName());
-    ui->properties_4->setText("Килокалорий в 100гр продукта " + QString::number(dishes[3].getCcal() / 10));
+    ui->properties_4->setText("Килокалорий в 100гр продукта " + QString::number(dishes[3].getCcal() / 10 /2));
     ui->label_6->setText("Белки: " + QString::number(dishes[3].getProtein()) + " " + "Жиры: " + QString::number(dishes[3].getFats()) + " " + "Углеводы: " + QString::number(dishes[3].getCarbohydrates()));
 
   auto wrapper = new QVBoxLayout;
@@ -310,11 +311,13 @@ void MainWindow::on_commandLinkButton_2_clicked(){
     auto window = new window2;
     window->broadcast(2, dishes);
     window->show();
+
 }
 
 void MainWindow::on_commandLinkButton_3_clicked(){
     auto window = new window2;
     window->broadcast(3, dishes);
+
     window->show();
 }
 
@@ -335,23 +338,29 @@ void MainWindow::wastedCheck(){
         ui->frame_3->setEnabled(true);
         ui->frame_4->setEnabled(false);
     }
-    if(results[0].getPercent() < 65) ui->frame->setEnabled(false);
-    if(results[1].getPercent() < 65) ui->frame_2->setEnabled(false);
-    if(results[2].getPercent() < 65) ui->frame_3->setEnabled(false);
-    if(results[3].getPercent() < 65) ui->frame_4->setEnabled(false);
+    if(results[0].getPercent() <= 65) ui->frame->setEnabled(false);
+    if(results[1].getPercent() <= 65) ui->frame_2->setEnabled(false);
+    if(results[2].getPercent() <= 65) ui->frame_3->setEnabled(false);
+    if(results[3].getPercent() <= 65) ui->frame_4->setEnabled(false);
 
-    qDebug() << "kkkkkkkkkkkkk";
-    qDebug() << results[0].getName();
-    qDebug() << results[0].getPercent();
-    qDebug() << results[1].getName();
-    qDebug() << results[1].getPercent();
-    qDebug() << results[2].getName();
-    qDebug() << results[2].getPercent();
-    qDebug() << results[3].getName();
-    qDebug() << results[3].getPercent();
-    qDebug() << "kkkkkkkkkkkkk";
-    for(int i = 0; i < dishes.length(); i++){
-        qDebug() << dishes[i].getName();
-    }
-    qDebug() << "kkkkkkkkkkkkk";
+
+}
+
+void MainWindow::showProg(){
+//    ui->scrollArea->hide();
+//    ui->label->hide();
+//    ui->label_2->hide();
+//    ui->label_3->hide();
+//    ui->label_4->hide();
+//    ui->label_5->hide();
+//    ui->label_6->hide();
+//    ui->properties_1->hide();
+//    ui->properties_2->hide();
+//    ui->properties_3->hide();
+//    ui->properties_4->hide();
+//    ui->PP->hide();
+//    ui->pushButton->hide();
+
+
+
 }

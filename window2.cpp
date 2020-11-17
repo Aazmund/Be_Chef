@@ -19,6 +19,11 @@ window2::~window2()
     delete ui;
 }
 
+void window2::showProg(){
+    ui->label_3->hide();
+    ui->label_4->hide();
+}
+
 void window2::broadcast(int id, QVector<dish> dishes){
 
     QFile file(":/recipes.txt");
@@ -50,31 +55,32 @@ void window2::broadcast(int id, QVector<dish> dishes){
     case 1:
         ui->label->setPixmap(QPixmap(":/images/borscht.jpg"));
         ui->label_2->setText(dishes[0].getName());
-        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[0].getCcal() / 10));
+        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[0].getCcal() / 10 / 3));
         ui->label_4->setText("Белки: " + QString::number(dishes[0].getProtein()) + " " + "Жиры: " + QString::number(dishes[0].getFats()) + " " + "Углеводы: " + QString::number(dishes[0].getCarbohydrates()));
         ui->label_5->setText(param1);
         break;
     case 2:
         ui->label->setPixmap(QPixmap(":/images/myaso-po-francuzski.jpg"));
         ui->label_2->setText(dishes[1].getName());
-        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[1].getCcal() / 10));
+        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[1].getCcal() / 10 ));
         ui->label_4->setText("Белки: " + QString::number(dishes[1].getProtein()) + " " + "Жиры: " + QString::number(dishes[1].getFats()) + " " + "Углеводы: " + QString::number(dishes[1].getCarbohydrates()));
         ui->label_5->setText(param2);
         break;
     case 3:
         ui->label->setPixmap(QPixmap(":/images/vegetable_stew.jpg"));
         ui->label_2->setText(dishes[2].getName());
-        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[2].getCcal() / 10));
+        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[2].getCcal() / 10 ));
         ui->label_4->setText("Белки: " + QString::number(dishes[2].getProtein()) + " " + "Жиры: " + QString::number(dishes[2].getFats()) + " " + "Углеводы: " + QString::number(dishes[2].getCarbohydrates()));
         ui->label_5->setText(param3);
         break;
     case 4:
         ui->label->setPixmap(QPixmap(":/images/Olivie.jpg"));
         ui->label_2->setText(dishes[3].getName());
-        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[3].getCcal() / 10));
+        ui->label_3->setText("Килокалорий в 100гр продукта: " + QString::number(dishes[3].getCcal() / 10 / 2));
         ui->label_4->setText("Белки: " + QString::number(dishes[3].getProtein()) + " " + "Жиры: " + QString::number(dishes[3].getFats()) + " " + "Углеводы: " + QString::number(dishes[3].getCarbohydrates()));
         ui->label_5->setText(param4);
         break;
     }
+//    showProg();
 
 }

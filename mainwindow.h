@@ -30,6 +30,7 @@ public:
     void searchDish(int *);
     void setAll();
     void wastedCheck();
+    void showProg();
 
     ~MainWindow();
 
