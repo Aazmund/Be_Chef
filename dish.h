@@ -13,6 +13,10 @@ private:
     QVector <int>indeWeights;
     int ccal;
 
+    double protein;
+    double fats;
+    double carbohydrates;
+
 public:
     dish();
     dish(int, QString, ingredient, int);
@@ -37,6 +41,12 @@ public:
 
     int getCcal();
     void c_ccal();
+    double getProtein() const;
+    void setProtein(double value);
+    double getFats() const;
+    void setFats(double value);
+    double getCarbohydrates() const;
+    void setCarbohydrates(double value);
 };
 
 #endif // DISH_H

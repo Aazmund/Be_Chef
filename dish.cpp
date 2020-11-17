@@ -1,6 +1,36 @@
 #include "dish.h"
 #include <QDebug>
 
+double dish::getProtein() const
+{
+    return protein;
+}
+
+void dish::setProtein(double value)
+{
+    protein += value;
+}
+
+double dish::getFats() const
+{
+    return fats;
+}
+
+void dish::setFats(double value)
+{
+    fats += value;
+}
+
+double dish::getCarbohydrates() const
+{
+    return carbohydrates;
+}
+
+void dish::setCarbohydrates(double value)
+{
+    carbohydrates += value;
+}
+
 dish::dish(){
     id = 0;
     name = "";
